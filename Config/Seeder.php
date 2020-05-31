@@ -2,7 +2,7 @@
 <?php
 
 
-require 'Config/Db.php';
+// require 'Config/Db.php';
 
 class Seeder
 {
@@ -76,9 +76,10 @@ class Seeder
       `created_at` TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6), 
       `updated_at` TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6), 
       PRIMARY KEY (`id`)
-      FOREIGN KEY (`property_type_id`) REFERENCES property_type(`id`) ON DELETE CASCADE
     ) ENGINE = InnoDB;
     ');
+
+    // FOREIGN KEY (`property_type_id`) REFERENCES property_type(`id`) ON DELETE CASCADE
 
     $create_property_postcode = $this->db->query('
     CREATE TABLE `' . $this->db->db_name . '`.`property_postcode` ( 
@@ -93,12 +94,12 @@ class Seeder
     if($create_property_type !== false && $create_property !== false && $create_property_postcode !== false)
     {
 
-      return true;
+      return false;
 
     } else {
-
-      return false;
       
+      return true;
+
     }
 
 
@@ -175,6 +176,10 @@ class Seeder
           $this->db->query("INSERT INTO property_type (id, title, description, created_at, updated_at) VALUES (:id, :title, :description, :created_at, :updated_at)", $params_property_type);
         }
       }
+    } else {
+
+      return false;
+
     }
   }
 

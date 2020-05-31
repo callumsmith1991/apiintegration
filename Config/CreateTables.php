@@ -1,7 +1,7 @@
 <?php
 
 
-// require '../Config/Db.php';
+// require 'Seeder.php';
 
 
 class CreateTables {

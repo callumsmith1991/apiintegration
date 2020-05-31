@@ -3,6 +3,7 @@
 include 'Includes/Header.php';
 
 // require 'Config/Db.php';
+require 'Config/Db.php';
 require 'Config/Seeder.php';
 require 'Api/ApiRequest.php';
 require 'Properties/Property.php';
@@ -25,14 +26,16 @@ if ($app_instantized === false) :
 
 ?>
 
-    <p>Do you want to integrate Api information in Database: <strong><?php echo $seed->database_name; ?></strong></p>
-
-    <form action="<?php echo "http://" . $_SERVER['SERVER_NAME'] . '/' . $homepage ?>/Forms/Submission.php" method="POST" id="seed-form">
-        <input type="submit" class="btn btn-primary" name="yes" value="Yes" />
-        <input type="hidden" name="form-name" value="seed" />
-    </form>
-
     <div id="response">
+
+        <p>Do you want to integrate Api information in Database: <strong><?php echo $seed->database_name; ?></strong></p>
+
+        <form action="<?php echo "http://" . $_SERVER['SERVER_NAME'] . '/' . $homepage ?>/Forms/Submission.php" method="POST" id="seed-form">
+            <input type="submit" class="btn btn-primary" name="yes" value="Yes" />
+            <input type="hidden" name="form-name" value="seed" />
+        </form>
+
+
     </div>
 
 
@@ -47,7 +50,7 @@ else :
 
 
 
-<?php
+    <?php
 
     if (!isset($_SESSION['firstVisit'])) {
 
@@ -68,52 +71,52 @@ else :
 
 
 
-    if($properties_in_db !== false):
+    if ($properties_in_db !== false) :
 
-?>
-
-
-<table class="table">
-    <thead>
-        <th>Address</th>
-        <th></th>
-    </thead>
-
-    <tbody>
-        <?php foreach ($properties_in_db as $property) : ?>
-
-            <tr>
-                <!-- <td><?php echo $property->uuid; ?></td> -->
-                <td><?php echo $property->address; ?></td>
-                <td><a href="edit.php?id=<?php echo $property->id; ?>" class="btn btn-info">Edit</a></td>
-                <td><a href="delete.php?id=<?php echo $property->id; ?>" class="btn btn-danger">Delete</a></td>
-            </tr>
-
-        <?php endforeach; ?>
-
-    </tbody>
-</table>
-
-<div class="row">
-    <div class="col-12">
-        <a href="create.php" class="btn btn-primary">Create New</a>
-    </div>
-</div>
+    ?>
 
 
-<?php
+        <table class="table">
+            <thead>
+                <th>Address</th>
+                <th></th>
+            </thead>
 
-    else:
+            <tbody>
+                <?php foreach ($properties_in_db as $property) : ?>
 
-?>
+                    <tr>
+                        <!-- <td><?php echo $property->uuid; ?></td> -->
+                        <td><?php echo $property->address; ?></td>
+                        <td><a href="edit.php?id=<?php echo $property->id; ?>" class="btn btn-info">Edit</a></td>
+                        <td><a href="delete.php?id=<?php echo $property->id; ?>" class="btn btn-danger">Delete</a></td>
+                    </tr>
 
-<p>No properties to display here yet</p>
+                <?php endforeach; ?>
 
-<div class="row">
-    <div class="col-12">
-        <a href="create.php" class="btn btn-primary">Create New</a>
-    </div>
-</div>
+            </tbody>
+        </table>
+
+        <div class="row">
+            <div class="col-12">
+                <a href="create.php" class="btn btn-primary">Create New</a>
+            </div>
+        </div>
+
+
+    <?php
+
+    else :
+
+    ?>
+
+        <p>No properties to display here yet</p>
+
+        <div class="row">
+            <div class="col-12">
+                <a href="create.php" class="btn btn-primary">Create New</a>
+            </div>
+        </div>
 
 <?php
 

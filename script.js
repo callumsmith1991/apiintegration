@@ -9,7 +9,7 @@ $('#seed-form').bind('submit', function(e) {
         url: $(this).attr('action'),
         data: $(this).serialize(),
         beforeSend: function() {
-            
+            $('#response').html('<p>Loading</p>')
         },
         success: function(data) {
            $('#response').html(data);

@@ -46,7 +46,7 @@ class ApiRequest
 
             curl_close($ch);
 
-            return $error_message;
+            return false;
 
         }  else {
             

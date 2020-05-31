@@ -5,7 +5,9 @@
 require 'FormSubmit.php';
 include '../Includes/Header.php';
 //require '../Config/Db.php';
-include '../Config/CreateTables.php';
+require '../Config/Seeder.php';
+require '../Api/ApiRequest.php';
+// include '../Config/CreateTables.php';
 // require '../Config/Db.php';
 
 
@@ -68,8 +70,24 @@ if ($_POST['form-name'] == 'create') {
 
 } elseif($_POST['form-name'] === 'seed')
 {
-    $seed = new CreateTables();
-    $create_tables = $seed->create();
+    $seed = Seeder::getInstance();
+    $create_tables = $seed->createTables();
+    
+    $url = 'http://trialapi.craig.mtcdevserver.com/api/properties';
+    $api_request = new ApiRequest();
+    $result = $api_request->get($url);
+
+    if(is_array($result)) {
+
+        $seed_api_data = $seed->seedApiData($result);
+
+    } else {
+
+        $seed_api_data = false;
+
+    }
+
+
 
     if($create_tables == true)
     {
@@ -81,6 +99,18 @@ if ($_POST['form-name'] == 'create') {
         echo '<div class="alert alert-danger">ERROR something went wrong</div>';
 
     }
+
+    if($seed_api_data == false)
+    {
+
+        echo '<div class="alert alert-danger">ERROR could not seed api data</div>';
+
+    } else {
+
+        echo '<div class="alert alert-success">Api data seeded successfully</div>';
+
+    }
+
 }
 
 ?>
