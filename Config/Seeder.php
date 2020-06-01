@@ -176,6 +176,9 @@ class Seeder
           $this->db->query("INSERT INTO property_type (id, title, description, created_at, updated_at) VALUES (:id, :title, :description, :created_at, :updated_at)", $params_property_type);
         }
       }
+
+      return true;
+      
     } else {
 
       return false;

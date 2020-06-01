@@ -100,14 +100,15 @@ if ($_POST['form-name'] == 'create') {
 
     }
 
-    if($seed_api_data == false)
+    if($seed_api_data == true)
     {
 
-        echo '<div class="alert alert-danger">ERROR could not seed api data</div>';
+        echo '<div class="alert alert-success">Api data seeded successfully</div>';
 
     } else {
 
-        echo '<div class="alert alert-success">Api data seeded successfully</div>';
+        echo '<div class="alert alert-danger">ERROR could not seed api data</div>';
+
 
     }
 
