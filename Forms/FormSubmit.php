@@ -218,7 +218,7 @@ class FormSubmit extends FormValidation
           } else 
           {
 
-            $params_pc = array(":id" => $post_data['property'], ":postcode" => $post_data['postcode']);
+            $params_pc = array(":property_id" => $post_data['property'], ":postcode" => $post_data['postcode']);
 
             $this->db->query("INSERT INTO property_postcode (property_id, postcode) VALUES (:property_id, :postcode)", $params_pc);
 
