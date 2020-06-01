@@ -2,18 +2,13 @@
 
 include 'Includes/Header.php';
 
-$url = $_SERVER['REQUEST_URI'];
-
-$url = explode('/', $url);
-
-$homepage = $url['1'];
 
 ?>
 
 <div class="row">
     <div class="col-4">
 
-        <form action="<?php echo "http://" . $_SERVER['SERVER_NAME'] . '/' . $homepage ?>/Forms/Submission.php" method="POST" enctype="multipart/form-data">
+        <form action="Forms/Submission.php" method="POST" enctype="multipart/form-data">
 
             <div class="form-group">
                 <label for="county">County</label>

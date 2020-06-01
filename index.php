@@ -8,12 +8,6 @@ require 'Config/Seeder.php';
 require 'Api/ApiRequest.php';
 require 'Properties/Property.php';
 
-$url = $_SERVER['REQUEST_URI'];
-
-$url = explode('/', $url);
-
-$homepage = $url['1'];
-
 
 // $url = 'http://trialapi.craig.mtcdevserver.com/api/properties';
 // $api_request = new ApiRequest();
@@ -30,7 +24,7 @@ if ($app_instantized === false) :
 
         <p>Do you want to integrate Api information in Database: <strong><?php echo $seed->database_name; ?></strong></p>
 
-        <form action="<?php echo "http://" . $_SERVER['SERVER_NAME'] . '/' . $homepage ?>/Forms/Submission.php" method="POST" id="seed-form">
+        <form action="Forms/Submission.php" method="POST" id="seed-form">
             <input type="submit" class="btn btn-primary" name="yes" value="Yes" />
             <input type="hidden" name="form-name" value="seed" />
         </form>

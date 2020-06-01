@@ -23,7 +23,7 @@ if (isset($property_id)) {
 
 ?>
 
-<form action="<?php echo "http://" . $_SERVER['SERVER_NAME'] . '/' . $homepage ?>/Forms/Submission.php" method="POST">
+<form action="Forms/Submission.php" method="POST">
     <p>Are you sure you want to delete <?php echo $property->address; ?> ? </p>
     <input type="hidden" name="form-name" value="delete" />
     <input type="hidden" name="property" value="<?php echo $property->id; ?>" />

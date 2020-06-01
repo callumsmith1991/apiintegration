@@ -6,11 +6,6 @@ require 'Properties/Property.php';
 
 $property_id = strip_tags(htmlspecialchars($_GET['id'], ENT_QUOTES));
 
-$url = $_SERVER['REQUEST_URI'];
-
-$url = explode('/', $url);
-
-$homepage = $url['1'];
 
 if (isset($property_id)) {
 
@@ -21,7 +16,7 @@ if (isset($property_id)) {
     <div class="row">
         <div class="col-4">
 
-            <form action="<?php echo "http://" . $_SERVER['SERVER_NAME'] . '/' . $homepage ?>/Forms/Submission.php" method="POST" enctype="multipart/form-data">
+            <form action="Forms/Submission.php" method="POST" enctype="multipart/form-data">
 
                 <div class="form-group">
                     <label for="county">County</label>
