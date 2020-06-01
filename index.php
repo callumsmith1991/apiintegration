@@ -54,9 +54,9 @@ else :
 
     if (!isset($_SESSION['firstVisit'])) {
 
-        // $url = 'http://trialapi.craig.mtcdevserver.com/api/properties';
-        // $api_request = new ApiRequest();
-        // $result = $api_request->get($url);
+        $url = 'http://trialapi.craig.mtcdevserver.com/api/properties';
+        $api_request = new ApiRequest();
+        $result = $api_request->get($url);
 
         $update_data_result = $seed->updateData($result['data']);
         echo $update_data_result;
