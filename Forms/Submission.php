@@ -79,7 +79,7 @@ if ($_POST['form-name'] == 'create') {
 
     if(is_array($result)) {
 
-        $seed_api_data = $seed->seedApiData($result);
+        $seed_api_data = $seed->seedApiData($result['data']);
 
     } else {
 
