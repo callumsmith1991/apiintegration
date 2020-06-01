@@ -115,11 +115,11 @@ if (isset($property_id)) {
                 <div class="form-group">
 
                     <label>For Sale</label><br>
-                    <input type="radio" name="forsaleorrent" value="For Sale" <?php if ($property->type == 'For Sale') {
+                    <input type="radio" name="forsaleorrent" value="For Sale" <?php if ($property->type == 'For Sale' || $property->type == 'sale') {
                                                                                 echo "checked=checked";
                                                                             }  ?> /><br>
                     <label>For Rent</label><br>
-                    <input type="radio" name="forsaleorrent" value="For Rent" <?php if ($property->type == 'For Rent') {
+                    <input type="radio" name="forsaleorrent" value="For Rent" <?php if ($property->type == 'For Rent' || $property->type == 'rent') {
                                                                                 echo "checked=checked";
                                                                             }  ?> />
                 </div>
