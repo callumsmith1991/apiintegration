@@ -26,6 +26,8 @@ class Property
   public $address;
   public $image_full;
   public $image_thumbnail;
+  public $num_bedrooms;
+  public $num_bathrooms;
   public $type;
   public $property_type;
 
@@ -49,6 +51,8 @@ class Property
       $this->price = $property_info[0]['price'];
       $this->image_full = $property_info[0]['image_full'];
       $this->image_thumbnail = $property_info[0]['image_thumbnail'];
+      $this->num_bedrooms = $property_info[0]['num_bedrooms'];
+      $this->num_bathrooms = $property_info[0]['num_bathrooms'];
       $this->type = $property_info[0]['type'];
       $this->property_type = $this->getPropertyTypeInformation($this->property_type_id);
       $postcode = $this->getPropertyPostcode($this->id);
