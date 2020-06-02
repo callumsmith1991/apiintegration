@@ -1,0 +1,13 @@
+{
+    "name": "callu/silverbullet",
+    "authors": [
+        {
+            "name": "callum",
+            "email": "callumsmith1804@outlook.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "9"
+    }
+}

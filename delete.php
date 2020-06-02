@@ -8,11 +8,6 @@ require 'Properties/Property.php';
 
 $property_id = strip_tags(htmlspecialchars($_GET['id'], ENT_QUOTES));
 
-$url = $_SERVER['REQUEST_URI'];
-
-$url = explode('/', $url);
-
-$homepage = $url['1'];
 
 if (isset($property_id)) {
 

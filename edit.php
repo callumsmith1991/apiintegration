@@ -11,6 +11,7 @@ if (isset($property_id)) {
 
     $property = new Property($property_id);
 
+    $test = 'test';
 ?>
 
     <div class="row">
@@ -65,30 +66,30 @@ if (isset($property_id)) {
                 <div class="form-group">
                     <label for="numberOfBedrooms">Number of bedrooms</label>
                     <select name="numberOfBedrooms" id="" class="form-control">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
+                        <option value="1" <?php if($property->num_bedrooms == "1") { echo "selected";} ?>>1</option>
+                        <option value="2" <?php if($property->num_bedrooms == "2") { echo 'selected';} ?>>2</option>
+                        <option value="3" <?php if($property->num_bedrooms == "3") { echo 'selected';} ?>>3</option>
+                        <option value="4" <?php if($property->num_bedrooms == "4") { echo "selected";} ?>>4</option>
+                        <option value="5" <?php if($property->num_bedrooms == "5") { echo "selected";} ?>>5</option>
+                        <option value="6" <?php if($property->num_bedrooms == "6") { echo "selected";} ?>>6</option>
+                        <option value="7" <?php if($property->num_bedrooms == "7") { echo "selected";} ?>>7</option>
+                        <option value="8" <?php if($property->num_bedrooms == "8") { echo "selected";} ?>>8</option>
+                        <option value="9" <?php if($property->num_bedrooms == "9") { echo "selected";} ?>>9</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="numberOfBathrooms">Number of bedrooms</label>
+                    <label for="numberOfBathrooms">Number of bathrooms</label>
                     <select name="numberOfBathrooms" id="" class="form-control">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
+                        <option value="1" <?php if($property->num_bathrooms == "1") { echo "selected";} ?>>1</option>
+                        <option value="2" <?php if($property->num_bathrooms == "2") { echo "selected";} ?>>2</option>
+                        <option value="3" <?php if($property->num_bathrooms == "3") { echo "selected";} ?>>3</option>
+                        <option value="4" <?php if($property->num_bathrooms == "4") { echo "selected";} ?>>4</option>
+                        <option value="5" <?php if($property->num_bathrooms == "5") { echo "selected";} ?>>5</option>
+                        <option value="6" <?php if($property->num_bathrooms == "6") { echo "selected";} ?>>6</option>
+                        <option value="7" <?php if($property->num_bathrooms == "7") { echo "selected";} ?>>7</option>
+                        <option value="8" <?php if($property->num_bathrooms == "8") { echo "selected";} ?>>8</option>
+                        <option value="9" <?php if($property->num_bathrooms == "9") { echo "selected";} ?>>9</option>
                     </select>
                 </div>
 
@@ -96,13 +97,13 @@ if (isset($property_id)) {
                 <div class="form-group">
                     <label for="propertyType">Property Type</label>
                     <select name="propertyType" id="" class="form-control">
-                        <option value="1">Flat</option>
-                        <option value="2">Detatched</option>
-                        <option value="3">Semi-detached</option>
-                        <option value="4">Terraced</option>
-                        <option value="5">End of Terrace</option>
-                        <option value="6">Cottage</option>
-                        <option value="7">Bungalow</option>
+                        <option value="1" <?php if($property->property_type_id == "1") { echo "selected";} ?>>Flat</option>
+                        <option value="2" <?php if($property->property_type_id == "2") { echo "selected";} ?>>Detatched</option>
+                        <option value="3" <?php if($property->property_type_id == "3") { echo "selected";} ?>>Semi-detached</option>
+                        <option value="4" <?php if($property->property_type_id == "4") { echo "selected";} ?>>Terraced</option>
+                        <option value="5" <?php if($property->property_type_id == "5") { echo "selected";} ?>>End of Terrace</option>
+                        <option value="6" <?php if($property->property_type_id == "6") { echo "selected";} ?>>Cottage</option>
+                        <option value="7" <?php if($property->property_type_id == "7") { echo "selected";} ?>>Bungalow</option>
                     </select>
                 </div>
 
