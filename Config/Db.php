@@ -78,6 +78,7 @@ class Db
     } catch (PDOException $e) {
 
       // echo $e . '<br><br>';
+
     }
   }
 }

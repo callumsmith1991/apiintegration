@@ -217,14 +217,13 @@ class Seeder
           ":price" => $api_property['price'],
           ":type" => $api_property['type'],
           ":created_at" => $api_property['created_at'],
-          ":updated_at" => $api_property['updated_at'],
-          ":uuidtwo" => $api_property['uuid']
+          ":updated_at" => $api_property['updated_at']
         );
 
 
         if ($result !== false) {
 
-          $this->db->query("
+         $query = $this->db->query("
              UPDATE 
                properties
              SET 
@@ -245,14 +244,23 @@ class Seeder
                type = :type,
                created_at = :created_at,
                updated_at = :updated_at
-             WHERE uuid = :uuidtwo  
+             WHERE uuid = :uuid  
           ", $params_update);
 
-          $update_count++;
+          if($query !== false) {
+
+
+          } else {
+
+            $update_count++;
+
+          }
 
         } else {
 
-          $this->db->query("
+          // unset($params_update[':uuidtwo']);
+
+         $query = $this->db->query("
           INSERT INTO properties (
             uuid, property_type_id, county, country, 
             town, description, address, image_full, 
@@ -270,7 +278,11 @@ class Seeder
             )
           ", $params_update);
 
-          $insert_count++;
+          if($query !== false) {
+
+              $insert_count++;
+
+          }
 
         }
       }
